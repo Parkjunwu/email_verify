@@ -30,14 +30,14 @@ const VerifyEmailFetch = () => {
   });
 
   useEffect(()=>{
-    if(token) {
+    if(token && verifyEmail) {
       verifyEmail({
         variables:{
           token,
         },
       });
     }
-  },[]);
+  },[token,verifyEmail]);
 
   const displayResult = verifyResult === "loading" ? "이메일 인증 중.." :
     verifyResult === "ok" ? "이메일 인증이 완료되었습니다." :
