@@ -18,7 +18,7 @@ const VerifyEmailFetch = () => {
   
   const [ verifyResult, setVerifyResult ] = useState("loading");
   
-  const [ verifyEmail, {data} ] = useMutation<verifyEmailToken,verifyEmailTokenVariables>(VERIFY_EMAIL_TOKEN, {
+  const [ verifyEmail, { data, error:mutationError } ] = useMutation<verifyEmailToken,verifyEmailTokenVariables>(VERIFY_EMAIL_TOKEN, {
     onCompleted:(data)=>{
       console.log(data.verifyEmailToken)
       if(data.verifyEmailToken.ok){
@@ -39,6 +39,14 @@ const VerifyEmailFetch = () => {
       });
     }
   },[token,email,verifyEmail]);
+
+  console.log("mutationError")
+  console.log(mutationError)
+  
+  useEffect(()=>{
+    setVerifyResult("mutationError")
+  },[mutationError])
+
 
   const displayResult = verifyResult === "loading" ? "이메일 인증 중.." :
     verifyResult === "ok" ? "이메일 인증이 완료되었습니다." :
