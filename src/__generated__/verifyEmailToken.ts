@@ -19,4 +19,5 @@ export interface verifyEmailToken {
 
 export interface verifyEmailTokenVariables {
   token: string;
+  email: string;
 }

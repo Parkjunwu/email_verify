@@ -13,7 +13,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             
-            <Route path="confirm/:token" element={<VerifyEmailFetch />} />
+            <Route path="confirm/:token/:email" element={<VerifyEmailFetch />} />
             <Route path="*" element={<NotFound />} />
             
           </Routes>
