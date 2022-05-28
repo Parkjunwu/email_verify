@@ -6,6 +6,8 @@ import { client } from './apollo';
 import NotFound from './screens/NotFound';
 import VerifyEmailFetch from './screens/VerifyEmailFetch';
 
+// 얘 deploy 할 때 environment variable /graphql 확인 !!
+
 function App() {
   return (
     <ApolloProvider client={client}>

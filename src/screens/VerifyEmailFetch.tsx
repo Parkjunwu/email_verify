@@ -39,13 +39,12 @@ const VerifyEmailFetch = () => {
       });
     }
   },[token,email,verifyEmail]);
-
-  console.log("mutationError")
-  console.log(mutationError)
   
   useEffect(()=>{
-    setVerifyResult("mutationError")
-  },[mutationError])
+    if(mutationError){
+      setVerifyResult("mutationError");
+    }
+  },[mutationError]);
 
 
   const displayResult = verifyResult === "loading" ? "이메일 인증 중.." :
