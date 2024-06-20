@@ -17,7 +17,7 @@ const Layout:React.FC<BoxProps> = ({children}) => {
   return <Content>
     <Helmet>
       <title>
-        음악 일기 - 이메일 인증
+        이메일 인증
       </title>
     </Helmet>
     {children}
